@@ -16,3 +16,6 @@ Set your access token and permissions
 
 In your app target’s General settings tab, in the Linked Frameworks and Libraries section, drag and drop: **Mapbox.framework 
 CocoaLumberjack.framework , SVGKit.framework, mapmd.framework**
+
+#be sure if your project have embedded libraryies
+![embedded](/img/embedded.png)
