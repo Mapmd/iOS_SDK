@@ -5,7 +5,7 @@ Also you can get  MGLMapView object , be shure that you configured it propertly.
 ## Useriteraction 
 **You will receive this notifications :**
 * didUpdateUserLocation
-* tapOnMap
+* tapOnMap - Notification object is NSDictionary with location
 * tapOnFeature
 * didSelectAnnotation
 * didChangeUserTrackingMode
