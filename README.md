@@ -23,4 +23,4 @@ CocoaLumberjack.framework , SVGKit.framework, mapmd.framework**
 
 # Examples 
 - how to use MGLMapView [- mapbox](https://docs.mapbox.com/ios/maps/examples/#markers-and-callouts)
-- how to use MapView [- examples] (../examples.md)
+- how to use MapView [- examples] (https://github.com/Mapmd/iOS_Sdk/blob/master/examples.md)
