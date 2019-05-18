@@ -11,3 +11,5 @@ Also you can get  MGLMapView object , be shure that you configured it propertly.
 * didChangeUserTrackingMode
 * didDeselectAnnotation
 * didSelectAnnotation
+
+To enable touch recognizers , call method "[map enableLongPress];"
