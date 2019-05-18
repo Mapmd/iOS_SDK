@@ -29,6 +29,12 @@ typedef enum MapLogoPosition {
 + (double)distanceBetween:(CLLocationCoordinate2D)loc1 point:(CLLocationCoordinate2D)loc2;
 + (double)DegreeToRadian:(double)angle;
 
+/**
+ This function used for put correct annotation for 2 route
+ Returns a Dictonary with 2 keys - 1 and 2, this keys is two points of one and second route
+ It check max distance between point of two routes
+ */
++ (NSDictionary*)maxDistanceFromTwooPointsOfRoutes:(NSArray*)points1 second:(NSArray *)points2;
 
 + (double)RadianToDegree:(double)angle;
 
@@ -44,7 +50,7 @@ typedef enum MapLogoPosition {
  @param secs Type used to represent the time in seconds.
 
  Return format  "hour:min:sec"
- 
+ Based on current "AppleLanguages"
  */
 + (NSAttributedString*)localizedTime:(int)secs;
 

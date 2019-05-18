@@ -14,7 +14,19 @@
 @class MarkerManager;
 @class MapMarker;
 
+
+typedef NS_ENUM(NSUInteger, MapViewMode) {
+    MapViewModeDefault,
+    MapViewModeCompass,
+    MapViewModeFollow,
+    MapViewModeDrive
+};
+
 @interface MapView : UIView
+
+/**
+ When user long press at mapview, Call this method to enable this feature
+ */
 - (void)enableLongPress;
 - (void)disableLongPress;
 
@@ -25,6 +37,7 @@
 - (void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate zoomLevel:(double)zoomLevel animated:(BOOL)animated;
 - (void)setCenterCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated;
 
+- (void)setMapViewMode:(MapViewMode)mode;
 
 - (void)setZoomLevel:(double)level;
 
@@ -40,11 +53,17 @@
 - (MGLMapView *)getMapView;
 - (void)setLogoPosition:(MapLogoPosition)position;
 
+/**
+ A `CGPoint` indicating the position offset of the compass.
+ */
+- (void)setCompassOffset:(CGPoint)offset;
+
 - (MarkerManager *)markerManager;
 - (void)deselectAll;
 - (void)selectMarker:(MapMarker *)m;
 - (void)deselectMarker:(MapMarker *)m;
 - (void)showSatellite:(BOOL)show;
+- (void)removeAllRoutes;
 
 /**
 Display route path like public transport
@@ -60,8 +79,9 @@ Display route path like public transport
 /**
  Makes visible viewport to fit all route coordinates 
  @param rid - is routeid
+ @param padding - The inset of map bounds
  */
-- (void)zoomToRoute:(NSString *)rid;
+- (void)zoomToRoute:(NSString *)rid edgePadding:(UIEdgeInsets)padding;
 
 /**
  Add more that one route at map and select one
