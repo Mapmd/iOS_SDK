@@ -61,7 +61,10 @@ typedef NS_ENUM(NSUInteger, MapViewMode) {
 - (MarkerManager *)markerManager;
 - (void)deselectAll;
 - (void)selectMarker:(MapMarker *)m;
+- (void)selectMarker:(MapMarker *)m animated:(BOOL)a;
 - (void)deselectMarker:(MapMarker *)m;
+- (void)deselectMarker:(MapMarker *)m animated:(BOOL)a;
+
 - (void)showSatellite:(BOOL)show;
 - (void)removeAllRoutes;
 
@@ -106,6 +109,18 @@ Display route path like public transport
  Clears all on map
  */
 - (void)clearMap;
+
+/**
+ Clears all on map, keep selected marker
+ MarkerTypeTemporary and MarkerTypeRouteCenterPin are ignored (removed)
+ */
+- (void)clearMap:(BOOL)keepSelected;
+
+/**
+Clears all on map, keep  markers in array
+@param annotations is array of markers to keep on map
+ */
+- (void)clearMapKeepAnnotations:(NSArray *)annotations;
 
 @end
 

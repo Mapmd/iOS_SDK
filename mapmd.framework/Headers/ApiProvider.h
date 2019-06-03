@@ -19,6 +19,56 @@ static NSString *MGeocodeDidFinish = @"MGeocodeDidFinish";
 + (instancetype)shared;
 
 - (void)search:(NSString *)query;
+
+- (void)getRouteById:(NSString *)route_id completion:( void(^)(NSDictionary *))result;
+
+/**
+ Get city  by id
+ @param city_id - is id given by search.
+ Result will given in background thread
+ */
+
+- (void)getCity:(NSString*)city_id completion:( void(^)(NSDictionary *))result;
+
+/**
+ Get company (objects) by id
+ @param params
+ {
+ company_id - is id given by search.
+ skip - number to skip
+ take - number to skip
+ lat , lon - user coordinate to receive most nearest
+ }
+ 
+ Result will given in background thread
+ */
+
+- (void)getCompanyBranches:(NSDictionary*)params completion:( void(^)(NSDictionary *))result;
+
+
+/**
+ Get company (object) by id
+ @param company_id - is id given by search.
+ Result will given in background thread
+ */
+
+- (void)getCompany:(NSString*)company_id completion:( void(^)(NSDictionary *))result;
+
+
+/**
+ Get company (object) by id
+ @param object_id - is id given by search.
+ Result will given in background thread
+ */
+- (void)getObject:(NSString*)object_id completion:( void(^)(NSDictionary *))result;
+
+
+/**
+ Get street by id and number (optional)
+ @param street_id - is id given by search.
+ @param nr - is number of building (optional)
+ */
+- (void)getStreet:(NSString *)street_id number:(NSString *)nr completion:( void(^)(NSDictionary *))result;
 /**
 Geocoding place
 Return nearest city, street, building and company by geo_point

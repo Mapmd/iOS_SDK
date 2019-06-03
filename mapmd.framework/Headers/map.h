@@ -17,3 +17,11 @@ FOUNDATION_EXPORT const unsigned char mapVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <map/PublicHeader.h>
 
 #import "MapView.h"
+
+#if DEBUG
+#define LOG_ENABLED 1
+#else
+#define LOG_ENABLED 0
+#endif
+
+#define SMLog(format, ...) do { if(LOG_ENABLED) { NSLog(@"[DEBUG:%s:(%@):%d] "format, object_getClassName(self), NSStringFromSelector(_cmd), __LINE__, ##__VA_ARGS__); } } while(0)

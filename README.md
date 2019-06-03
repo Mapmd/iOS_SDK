@@ -18,6 +18,11 @@ Set your access token and permissions
 In your app target’s General settings tab, in the Linked Frameworks and Libraries section, drag and drop: **Mapbox.framework 
 CocoaLumberjack.framework , SVGKit.framework, mapmd.framework**
 
+**Important** https://github.com/mapbox/mapbox-gl-native/blob/master/platform/ios/INSTALL.md#dynamic-framework
+
+In the Build Phases tab, click the + button at the top and select “New Run Script Phase”. Enter the following code into the script text field: contents of "strip-frameworks.sh"
+
+
 # be sure if your project have embedded libraryies
 ![embedded](/img/embedded.png)
 
