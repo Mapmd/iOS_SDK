@@ -54,4 +54,10 @@ typedef enum MapLogoPosition {
  */
 + (NSAttributedString*)localizedTime:(int)secs;
 
+
+/*
+ Return default location name (localized)
+ */
++ (NSString *) localizedLocation;
+
 @end

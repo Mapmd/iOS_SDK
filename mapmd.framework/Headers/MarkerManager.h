@@ -18,6 +18,7 @@
 @interface MarkerManager : NSObject
 
 @property (nonatomic, readonly) NSMutableArray *markers;
+@property (nonatomic, readonly) NSMutableArray *hiddenMarkers;
 
 @property (nonatomic, weak) MGLMapView *mapView;
 
@@ -38,4 +39,9 @@
 /* against selected */
 - (void)hideAllMarkerLabels;
 
+/* set visible false */
+- (void)hideMarker:(MapMarker *)marker;
+
+/* set visible true */
+- (void)showMarker:(MapMarker *)marker;
 @end
