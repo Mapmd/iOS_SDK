@@ -44,5 +44,7 @@ typedef NS_ENUM(NSUInteger, MarkerType) {
 @property (nonatomic, readwrite) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) UIView <MGLCalloutView> *calloutView;
 @property (nonatomic, readwrite) CGSize imageOffset; // default is Zero
+@property (nonatomic, readwrite) NSInteger count; // used for MarkerTypeGroup
+
 @end
 
